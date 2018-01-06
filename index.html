@@ -1,0 +1,33 @@
+<!doctype html>
+<html ng-app="automasjonApp">
+  <head>
+    <link rel="stylesheet" href="/static/bootstrap.min.css">
+    <script src="/static/angular.min.js"></script>
+    <script src="/index.js"></script>
+  </head>
+  <body>
+
+    <div class="panel panel-primary" ng-controller="AutomasjonCtrl as ctrl">
+      <div class="panel-heading">
+        <h3>Automasjon</h3>
+      </div>
+
+      <table class="table">
+        <tr>
+          <td class="col-md-2">Light</td>
+          <td class="col-md-2"><button class="btn btn-primary btn-xs" type="button" ng-click="ctrl.toggleLight()">Light!</button></td>
+          <td>
+            <span ng-show="ctrl.lightStatus === true">ON</span>
+            <span ng-show="ctrl.lightStatus === false">OFF</span>
+          </td>
+        </tr>
+      </table>
+      <div class="panel-body">
+        <pre>
+          {{ctrl.errorMsg | json}}
+        </pre>
+      </div>
+    </div>
+
+  </body>
+</html>
